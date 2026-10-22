@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #10131d;
+  --pink: #ef8eac;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 4px;
+}
+
+.portfolio {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 70% 46%, #584861 0%, #242435 37%, #10131d 88%);
+}
+
+.portfolio-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+
+.portfolio-canvas:active {
+  cursor: grabbing;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.no-webgl {
+  color: #f1ebea;
+  background: #10131d;
+}
+
+.no-webgl::after {
+  position: fixed;
+  inset: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(239, 142, 172, 0.45);
+  color: #f1ebea;
+  background: #171820;
+  content: "3D graphics are unavailable. Try a browser with WebGL 2 enabled.";
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
